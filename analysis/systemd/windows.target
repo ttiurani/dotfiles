@@ -1,0 +1,7 @@
+[Unit]
+Description=Windows KVM boot target
+Requires=graphical.target
+Wants=windows.service
+Conflicts=rescue.service rescue.target
+After=graphical.target multi-user.target rescue.service rescue.target
+AllowIsolate=yes

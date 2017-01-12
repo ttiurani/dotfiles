@@ -30,19 +30,26 @@ source $ZSH/oh-my-zsh.sh
 
 alias flu="fleetctl list-units"
 alias cleanreboot='docker rmi $(docker images --quiet --filter "dangling=true") ; sudo systemctl reboot'
+alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 
-export JAVA_HOME="/usr/lib/jvm/java-8-jdk"
+# Exports
+
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
 export NODE_PATH="/usr/lib/node_modules"
 export ANDROID_HOME="/opt/android-sdk"
 export CLOUDSDK_PYTHON="/usr/bin/python2"
 export DOCKER_HOST="tcp://localhost:2375"
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/ttiurani/devel/sysadmin/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables bash completion for gcloud.
-source '/home/ttiurani/devel/sysadmin/google-cloud-sdk/completion.zsh.inc'
-
 # Fleet attached to CoreOS Node 1
 export FLEETCTL_TUNNEL="XXXXXX"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/ttiurani/devel/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/ttiurani/devel/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/ttiurani/devel/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/ttiurani/devel/google-cloud-sdk/completion.zsh.inc'
+fi
