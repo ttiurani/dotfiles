@@ -11,11 +11,11 @@ ZSH_THEME="proze"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mvn)
+plugins=(git mvn tmux)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/ttiurani/.cargo/bin"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -39,17 +39,17 @@ export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
 export NODE_PATH="/usr/lib/node_modules"
 export ANDROID_HOME="/opt/android-sdk"
 export CLOUDSDK_PYTHON="/usr/bin/python2"
-export DOCKER_HOST="tcp://localhost:2375"
+export DOCKER_HOST=unix:///var/run/docker.sock
 
 # Fleet attached to CoreOS Node 1
 export FLEETCTL_TUNNEL="XXXXXX"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /home/ttiurani/devel/google-cloud-sdk/path.zsh.inc ]; then
-  source '/home/ttiurani/devel/google-cloud-sdk/path.zsh.inc'
+if [ -f /home/ttiurani/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/ttiurani/google-cloud-sdk/path.zsh.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /home/ttiurani/devel/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/home/ttiurani/devel/google-cloud-sdk/completion.zsh.inc'
+if [ -f /home/ttiurani/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/ttiurani/google-cloud-sdk/completion.zsh.inc'
 fi

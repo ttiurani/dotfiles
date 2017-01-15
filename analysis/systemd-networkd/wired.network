@@ -1,0 +1,7 @@
+[Match]
+Name=enp6s0
+
+[Network]
+DHCP=ipv4
+DNS=8.8.8.8
+DNS=8.8.4.4
