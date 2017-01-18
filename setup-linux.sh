@@ -14,5 +14,8 @@ ln -s /home/ttiurani/dotfiles/xinitrc /home/ttiurani/.xinitrc
 mkdir -p /home/ttiurani/.config/alacritty
 ln -s /home/ttiurani/dotfiles/alacritty.yml /home/ttiurani/.config/alacritty/alacritty.yml
 
-# Spacevim
-ln -s /home/ttiurani/dotfiles/local.vim /home/ttiurani/.local.vim
+# nvim
+ln -s /home/ttiurani/dotfiles/nvim /home/ttiurani/.config/nvim
+
+# tmux
+ln -s /home/ttiurani/dotfiles/tmux.conf /home/ttiurani/.tmux.conf
