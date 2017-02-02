@@ -8,7 +8,7 @@ inoremap jk <esc>
 nnoremap <Leader>s :update<CR>
 
 " Map close buffer to space d
-nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>d :bp\|bd #<CR>
 
 " fugitive quick keys, from https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/cgciltz/
 nnoremap <space>ga :Git add %:p<CR><CR>
