@@ -1,6 +1,6 @@
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
-
+ 
 " Map jk sequence to escape
 inoremap jk <esc>
 
@@ -13,3 +13,7 @@ nnoremap <space>gst :Gstatus<CR>
 nnoremap <space>gc :Gcommit -v -q<CR><Paste>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
+
+" lightline buffer to arrow keys
+nnoremap <Left> :bprev<CR>
+nnoremap <Right> :bnext<CR>

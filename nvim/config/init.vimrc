@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'taohex/lightline-buffer'
 
 " programming, general
 Plug 'neomake/neomake'

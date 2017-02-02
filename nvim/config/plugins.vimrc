@@ -5,6 +5,12 @@ colorscheme solarized
 
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
+call vimfiler#custom#profile('default', 'context', {
+\   'auto_expand' : 1,
+\   'parent' : 0,
+\   'status' : 1,
+\   'no_quit': 1,
+\ })
 
 " Neomake
 autocmd! BufWritePost,BufEnter * Neomake
