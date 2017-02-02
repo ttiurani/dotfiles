@@ -16,5 +16,3 @@ set smartindent
 set termencoding=utf-8
 set fileencoding=utf-8
 
-" File types
-au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"

@@ -23,4 +23,6 @@ let g:neomake_error_sign = {
   \ 'text': 'E',
   \ 'texthl': 'ErrorMsg',
   \ }
-let g:neomake_logfile='/home/ttiurani/neomake.log'
+
+" Ctrlp
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
