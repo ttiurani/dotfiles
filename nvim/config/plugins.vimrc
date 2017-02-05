@@ -9,7 +9,9 @@ call vimfiler#custom#profile('default', 'context', {
 \   'auto_expand' : 1,
 \   'parent' : 0,
 \   'status' : 1,
+\   'direction' : 'rightbelow',
 \   'no_quit': 1,
+\   'force_hide': 1,
 \ })
 
 " Neomake

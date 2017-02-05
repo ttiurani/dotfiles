@@ -10,6 +10,9 @@ nnoremap <Leader>s :update<CR>
 " Map close buffer to space d
 nnoremap <Leader>d :bp\|bd #<CR>
 
+" Map VimFiler open and close to space e and E
+nnoremap <Leader>e :VimFilerExplorer<CR>
+
 " fugitive quick keys, from https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/cgciltz/
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gst :Gstatus<CR>
