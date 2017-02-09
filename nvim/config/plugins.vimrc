@@ -3,6 +3,11 @@ set termguicolors
 set background=dark
 colorscheme solarized
 
+" vim-tmux-navigator: only map up and down, left is broken, right is clear
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
 call vimfiler#custom#profile('default', 'context', {
@@ -11,6 +16,7 @@ call vimfiler#custom#profile('default', 'context', {
 \   'status' : 1,
 \   'direction' : 'rightbelow',
 \   'no_quit': 1,
+\   'safe' : 0,
 \   'force_hide': 1,
 \ })
 
