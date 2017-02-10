@@ -34,3 +34,19 @@ let g:neomake_error_sign = {
 
 " Ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Autosave
+let g:auto_save = 1
+set updatetime=200  " Dangerous!
+let g:auto_save_events = ["CursorHold", "CursorHoldI", "CompleteDone", "InsertLeave"]
+let g:auto_save_silent = 1
+let g:auto_save_presave_hook = 'call AbortIfNotGit()'
+
+function! AbortIfNotGit()
+  " Use variable from the vim-fugitive plugin
+  if exists('b:git_dir')
+    let g:auto_save_abort = 0
+  else
+    let g:auto_save_abort = 1
+  endif  
+endfunction

@@ -17,6 +17,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'taohex/lightline-buffer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
+Plug '907th/vim-auto-save'
 
 " programming, general
 Plug 'neomake/neomake'
@@ -24,5 +25,11 @@ Plug 'tpope/vim-commentary'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
+
+" Scala
+Plug 'derekwyatt/vim-scala'
+
+" Eclipse development through eclim
+Plug 'ttiurani/vim-eclim'
 
 call plug#end()
