@@ -23,3 +23,6 @@ nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
 " lightline buffer to arrow keys
 nnoremap <Left> :bprev<CR>
 nnoremap <Right> :bnext<CR>
+
+" code completion using tab
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"

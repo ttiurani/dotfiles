@@ -37,7 +37,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " Autosave
 let g:auto_save = 1
-set updatetime=200  " Dangerous!
+set updatetime=1000
 let g:auto_save_events = ["CursorHold", "CursorHoldI", "CompleteDone", "InsertLeave"]
 let g:auto_save_silent = 1
 let g:auto_save_presave_hook = 'call AbortIfNotGit()'
@@ -50,3 +50,9 @@ function! AbortIfNotGit()
     let g:auto_save_abort = 1
   endif  
 endfunction
+
+" Eclim
+let g:EclimCompletionMethod = 'omnifunc'
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1 

@@ -22,6 +22,7 @@ Plug '907th/vim-auto-save'
 " programming, general
 Plug 'neomake/neomake'
 Plug 'tpope/vim-commentary'
+Plug 'Shougo/deoplete.nvim'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
