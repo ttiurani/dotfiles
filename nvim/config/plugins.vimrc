@@ -48,11 +48,11 @@ function! AbortIfNotGit()
     let g:auto_save_abort = 0
   else
     let g:auto_save_abort = 1
-  endif  
+  endif
 endfunction
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1 
+let g:deoplete#enable_at_startup = 1

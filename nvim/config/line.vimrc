@@ -12,7 +12,7 @@ set noshowmode " hide default mode text (e.g. INSERT) as airline already display
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'tabline': {
-      \   'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ] ], 
+      \   'left': [ [ 'bufferinfo' ], [ 'bufferbefore', 'buffercurrent', 'bufferafter' ] ],
       \   'right': [ [ 'close' ], ]
       \ },
       \ 'component_expand': {

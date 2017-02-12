@@ -16,3 +16,5 @@ set smartindent
 set termencoding=utf-8
 set fileencoding=utf-8
 
+" Strip trailing whitespace in most filetypes
+autocmd BufWritePre *.vim,*.vimrc,*.c,*.php,*.scala,*.java,*.python,*.ts,*.js,*.html,*.css,*.scss,*.less,*.scss,*.xml :%s/ \+$//ge
