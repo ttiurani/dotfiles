@@ -1,6 +1,6 @@
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
- 
+
 " Map jk sequence to escape
 inoremap jk <esc>
 
@@ -8,10 +8,46 @@ inoremap jk <esc>
 nnoremap <Leader>s :update<CR>
 
 " Map close buffer to space d
-nnoremap <Leader>d :bp\|bd #<CR>
+nnoremap <silent><Leader>d :call CloseBufferAndPossiblyMoveToNext()<CR>
+function! CloseBufferAndPossiblyMoveToNext()
+  if &ft ==# 'netrw'
+    execute(':bd')
+  else
+    execute(':bd')
+    execute(':bp')
+  endif
+endfunction
 
-" Map VimFiler open and close to space e and E
-nnoremap <Leader>e :VimFilerExplorer<CR>
+" FZF mappings
+" https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220
+" {{{
+  nnoremap <silent> <C-P> :Files<CR>
+  nnoremap <silent> K :call SearchWordWithAg()<CR>
+  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+  nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
+  nnoremap <silent> <leader>. :AgIn
+
+  function! SearchWordWithAg()
+    execute 'Ag' expand('<cword>')
+  endfunction
+
+  function! SearchVisualSelectionWithAg() range
+    let old_reg = getreg('"')
+    let old_regtype = getregtype('"')
+    let old_clipboard = &clipboard
+    set clipboard&
+    normal! ""gvy
+    let selection = getreg('"')
+    call setreg('"', old_reg, old_regtype)
+    let &clipboard = old_clipboard
+    execute 'Ag' selection
+  endfunction
+
+  function! SearchWithAgInDirectory(...)
+    call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
+  endfunction
+  command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
+" }}}
 
 " fugitive quick keys, from https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/cgciltz/
 nnoremap <Leader>ga :Git add %:p<CR><CR>

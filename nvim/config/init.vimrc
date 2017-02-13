@@ -12,12 +12,11 @@ Plug 'tpope/vim-obsession'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
+Plug 'tpope/vim-vinegar'
 Plug 'taohex/lightline-buffer'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
 Plug '907th/vim-auto-save'
+Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " programming, general
 Plug 'neomake/neomake'
