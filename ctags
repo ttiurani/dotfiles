@@ -1,0 +1,4 @@
+--exclude=*.min.js
+--exclude=*-min.js
+--exclude=*.min.css
+--exclude=*-min.css
