@@ -57,7 +57,7 @@ nnoremap <Leader>gst :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit -v -q<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
-nnoremap <Leader>gps :Dispatch! git push<CR>
+nnoremap <Leader>gps :Gpush<CR>
 
 " lightline buffer to arrow keys
 nnoremap <Left> :bprev<CR>
