@@ -17,6 +17,7 @@ Plug 'taohex/lightline-buffer'
 Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-dispatch'
 
 " programming, general
 Plug 'neomake/neomake'
