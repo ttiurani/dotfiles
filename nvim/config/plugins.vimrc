@@ -29,7 +29,7 @@ let g:auto_save_presave_hook = 'call AbortIfNotGit()'
 
 function! AbortIfNotGit()
   " Use variable from the vim-fugitive plugin
-  if exists('b:git_dir')
+  if exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG'
     let g:auto_save_abort = 0
   else
     let g:auto_save_abort = 1
