@@ -25,7 +25,9 @@ endfunction
   nnoremap <silent> K :call SearchWordWithAg()<CR>
   vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
   nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-  nnoremap <silent> <leader>. :AgIn
+  nnoremap <silent> <leader>. :AgIn<space>
+  nnoremap <silent> <leader>gl :Commits<CR>
+  nnoremap <silent> <leader>gb :BCommits<CR>
 
   function! SearchWordWithAg()
     execute 'Ag' expand('<cword>')
@@ -50,9 +52,9 @@ endfunction
 " }}}
 
 " fugitive quick keys, from https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/cgciltz/
-nnoremap <Leader>ga :Git add %:p<CR><CR>
+nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gst :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit -v -q<CR><Paste>
+nnoremap <Leader>gc :Gcommit -v -q<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
 
