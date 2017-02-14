@@ -37,3 +37,6 @@ fi
 if [ -f /home/ttiurani/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/ttiurani/google-cloud-sdk/completion.zsh.inc'
 fi
+
+# Use ag as default explorer for fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

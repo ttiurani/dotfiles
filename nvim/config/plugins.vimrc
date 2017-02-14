@@ -41,3 +41,6 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+
+" FZF
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
