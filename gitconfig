@@ -3,3 +3,5 @@
 	name = Timo Tiuraniemi
 [core]
 	editor = nano
+[init]
+	templatedir = ~/.git_template

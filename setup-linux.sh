@@ -1,6 +1,6 @@
 #! /bin/bash
-
 ln -s /home/ttiurani/dotfiles/gitconfig /home/ttiurani/.gitconfig
+ln -s /home/ttiurani/dotfiles/git_template /home/ttiurani/.git_template
 ln -s /home/ttiurani/dotfiles/zshrc /home/ttiurani/.zshrc
 mkdir -p /home/ttiurani/.config/sway
 ln -s /home/ttiurani/dotfiles/sway.config /home/ttiurani/.config/sway/config
@@ -19,3 +19,6 @@ ln -s /home/ttiurani/dotfiles/nvim /home/ttiurani/.config/nvim
 
 # tmux
 ln -s /home/ttiurani/dotfiles/tmux.conf /home/ttiurani/.tmux.conf
+
+# ctags
+ln -s /home/ttiurani/dotfiles/ctags /home/ttiurani/.ctags
