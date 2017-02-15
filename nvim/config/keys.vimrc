@@ -18,9 +18,10 @@ function! CloseBufferAndPossiblyMoveToNext()
   endif
 endfunction
 
-" Map Ctrl-å to Ctrl-] (command for following links), since Ctrl-] doesn't
-" work with Finnish keyboard layout
-map <C-å> <C-]>
+" Map Ctrl-m to Ctrl-] (command for following links), since Ctrl-] doesn't
+" work with Finnish keyboard layout. Could not map to å because it in turn
+" won't work for both linux and osx.
+map <C-m> <C-]>
 
 " FZF mappings
 " https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220
