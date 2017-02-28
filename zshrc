@@ -10,7 +10,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias flu="fleetctl list-units"
 alias cleanreboot='docker rmi $(docker images --quiet --filter "dangling=true") ; sudo systemctl reboot'
 alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 alias nvimem='nvim -S ~/.local/share/nvim/sessions/em.vim -c "Obsess ~/.local/share/nvim/sessions/em.vim"'
@@ -24,9 +23,6 @@ export NODE_PATH="/usr/lib/node_modules"
 export ANDROID_HOME="/opt/android-sdk"
 export CLOUDSDK_PYTHON="/usr/bin/python2"
 export DOCKER_HOST=unix:///var/run/docker.sock
-
-# Fleet attached to CoreOS Node 1
-export FLEETCTL_TUNNEL="XXXXXX"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/ttiurani/google-cloud-sdk/path.zsh.inc ]; then
