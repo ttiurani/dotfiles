@@ -18,11 +18,13 @@ Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " programming, general
 Plug 'neomake/neomake'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'
+Plug 'jiangmiao/auto-pairs'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -32,5 +34,8 @@ Plug 'derekwyatt/vim-scala'
 
 " Eclipse development through eclim
 Plug 'ttiurani/vim-eclim'
+
+" Typescript
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
