@@ -29,24 +29,26 @@ fi
 
 # Exports
 
+export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
+export ANDROID_HOME="/opt/android-sdk"
+export DOCKER_HOST=unix:///var/run/docker.sock
+
 if [[ $platform == 'linux' ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+  export NODE_PATH="/usr/lib/node_modules"
+  export CLOUDSDK_PYTHON=$(which python2)
 elif [[ $platform == 'osx' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  export NODE_PATH="/usr/local/lib/node_modules"
 fi
-export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
-export NODE_PATH="/usr/lib/node_modules"
-export ANDROID_HOME="/opt/android-sdk"
-export CLOUDSDK_PYTHON="/usr/bin/python2"
-export DOCKER_HOST=unix:///var/run/docker.sock
 
 # Google Cloud SDK
 
-if [ -f /home/ttiurani/google-cloud-sdk/path.zsh.inc ]; then
-  source '/home/ttiurani/google-cloud-sdk/path.zsh.inc'
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/path.zsh.inc
 fi
-if [ -f /home/ttiurani/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/home/ttiurani/google-cloud-sdk/completion.zsh.inc'
+if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
+  source $HOME/google-cloud-sdk/completion.zsh.inc
 fi
 
 # AG and FZF
