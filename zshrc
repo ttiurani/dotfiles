@@ -3,9 +3,9 @@
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
-   platform='linux'
+  platform='linux'
 elif [[ "$unamestr" == 'Darwin' ]]; then
-   platform='osx'
+  platform='osx'
 fi
 
 # Path to your oh-my-zsh installation.
@@ -29,7 +29,11 @@ fi
 
 # Exports
 
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+if [[ $platform == 'linux' ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+elif [[ $platform == 'osx' ]]; then
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+fi
 export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
 export NODE_PATH="/usr/lib/node_modules"
 export ANDROID_HOME="/opt/android-sdk"
