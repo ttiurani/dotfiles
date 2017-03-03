@@ -23,6 +23,7 @@ source $ZSH/oh-my-zsh.sh
 alias cleanreboot='docker rmi $(docker images --quiet --filter "dangling=true") ; sudo systemctl reboot'
 alias nvimem='nvim -S ~/.local/share/nvim/sessions/em.vim -c "Obsess ~/.local/share/nvim/sessions/em.vim"'
 alias nvimfa='nvim -S ~/.local/share/nvim/sessions/fa.vim -c "Obsess ~/.local/share/nvim/sessions/fa.vim"'
+alias scp='noglob scp' # http://superuser.com/questions/584249/using-wildcards-in-commands-with-zsh
 if [[ $platform == 'linux' ]]; then
    alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 fi
