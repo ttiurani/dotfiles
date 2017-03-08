@@ -44,6 +44,8 @@ elif [[ $platform == 'osx' ]]; then
   export NODE_PATH="/usr/local/lib/node_modules"
 fi
 
+export PATH=$PATH:$HOME/bin
+
 # Google Cloud SDK
 
 if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then

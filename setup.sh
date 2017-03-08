@@ -10,6 +10,11 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='osx'
 fi
 
+# bin
+if [ ! -L $HOME/bin ]; then
+  ln -s $HOME/dotfiles/bin $HOME/bin
+fi
+
 # git
 if [ ! -L $HOME/.gitconfig ]; then
   ln -s $HOME/dotfiles/gitconfig $HOME/.gitconfig
