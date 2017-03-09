@@ -12,7 +12,7 @@ fi
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="proze"
-plugins=(git mvn tmux kubectl)
+plugins=(git mvn tmux)
 
 # User configuration
 
@@ -54,6 +54,10 @@ fi
 if [ -f $HOME/google-cloud-sdk/completion.zsh.inc ]; then
   source $HOME/google-cloud-sdk/completion.zsh.inc
 fi
+
+# Kubernetes
+
+source <(kubectl completion zsh)
 
 # AG and FZF
 
