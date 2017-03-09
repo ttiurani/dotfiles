@@ -25,6 +25,7 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-jdaddy'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
