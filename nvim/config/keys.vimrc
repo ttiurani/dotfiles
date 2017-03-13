@@ -4,6 +4,9 @@ let mapleader="\<SPACE>"
 " Map jk sequence to escape
 inoremap jk <esc>
 
+" Map Ctrl-D to del
+inoremap <C-D> <C-O>x
+
 " Map quick save to space s
 nnoremap <Leader>s :update<CR>
 
