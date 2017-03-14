@@ -12,11 +12,28 @@ fi
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="proze"
-plugins=(git mvn tmux)
+plugins=(git mvn tmux vi-mode)
 
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
+
+# https://github.com/robbyrussell/oh-my-zsh/issues/1720
+# because of this issue, vi-mode requires that up and down arrow are redifined after plugin
+# source from lib/key-bindings.zsh:
+
+# start typing + [Up-Arrow] - fuzzy find history forward
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+  autoload -U up-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
+# start typing + [Down-Arrow] - fuzzy find history backward
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+  autoload -U down-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
 
 # Set vi-mode to use "jk"
 bindkey "jk" vi-cmd-mode
