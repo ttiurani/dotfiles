@@ -9,7 +9,7 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 
 " Neomake
-autocmd! BufWritePost,BufEnter * Neomake
+autocmd! BufWritePost,BufReadPost * Neomake
 let g:neomake_open_list = 2
 let g:neomake_warning_sign = {
   \ 'text': 'W',
@@ -23,7 +23,7 @@ let g:neomake_error_sign = {
 " Autosave
 let g:auto_save = 1
 set updatetime=1000
-let g:auto_save_events = ["CursorHold", "CursorHoldI", "CompleteDone", "InsertLeave"]
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 let g:auto_save_silent = 1
 let g:auto_save_presave_hook = 'call AbortIfNotGit()'
 

@@ -64,6 +64,7 @@ if [[ $platform == 'linux' ]]; then
 elif [[ $platform == 'osx' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
   export NODE_PATH="/usr/local/lib/node_modules"
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 fi
 
 export PATH=$PATH:$HOME/bin
@@ -84,6 +85,9 @@ source <(kubectl completion zsh)
 function kfpl() {
   kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+')
 }
+
+# Git subrepo
+source ~/git-subrepo/.rc
 
 # AG and FZF
 

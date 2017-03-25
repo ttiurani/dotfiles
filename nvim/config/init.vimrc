@@ -18,7 +18,7 @@ Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
-Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'editorconfig/editorconfig-vim'
 
 " programming, general
 Plug 'neomake/neomake'
