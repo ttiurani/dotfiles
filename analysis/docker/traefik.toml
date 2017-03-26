@@ -24,7 +24,7 @@ address = ":443"
 [acme]
 # caServer = "https://acme-staging.api.letsencrypt.org/directory"
 email = "sysadmin@extendedmind.org"
-storage = "acme.json" # or "traefik/acme/account" if using KV store
+storage = "/etc/traefik/acme.json" # or "traefik/acme/account" if using KV store
 entryPoint = "https"
 onDemand = false
 OnHostRule = true

@@ -1,0 +1,36 @@
+version: "3.0"
+services:
+  nginx:
+    image: quay.io/extendedmind/nginx:nginx-1.11.9-1
+    networks:
+      - web
+    labels:
+      - "traefik.backend=nginx"
+      - "traefik.enable=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.frontend.rule=Host:devel.extendedmind.org"
+      - "traefik.port=9001"
+      - "traefik.weight=1"
+      - "traefik.docker.network=traefik_webgateway"
+    volumes:
+      - "/home/ttiurani/dotfiles/analysis/docker/devel.extendedmind.org.nginx.conf:/etc/nginx/sites-enabled/devel.extendedmind.org.nginx.conf"
+      - "/home/ttiurani/devel/em/extendedmind:/extendedmind"
+  
+  nexus:
+    image: sonatype/nexus3:latest
+    networks:
+      - web
+    labels:
+      - "traefik.backend=nexus"
+      - "traefik.enable=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.frontend.rule=Host:nexus.extendedmind.org"
+      - "traefik.port=8081"
+      - "traefik.weight=1"
+      - "traefik.docker.network=traefik_webgateway"
+    volumes:
+      - "/var/nexus:/nexus-data"
+networks:
+  web:
+    external:
+      name: traefik_webgateway
