@@ -41,6 +41,8 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
 
 " FZF
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

@@ -75,3 +75,7 @@ nnoremap <Right> :bnext<CR>
 
 " code completion using tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Eclim ctrl-x ctrl-o use ctrl-space insted
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
