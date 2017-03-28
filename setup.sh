@@ -79,4 +79,8 @@ elif [ $platform == 'osx' ]; then
     ln -s $HOME/dotfiles/karabiner $HOME/.config/karabiner
   fi
 
+  if [ ! -L $HOME/.hammerspoon ]; then
+    ln -s $HOME/dotfiles/hammerspoon $HOME/.hammerspoon
+  fi
+
 fi
