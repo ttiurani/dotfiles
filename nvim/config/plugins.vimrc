@@ -19,6 +19,7 @@ let g:neomake_error_sign = {
   \ 'text': 'E',
   \ 'texthl': 'ErrorMsg',
   \ }
+let g:neomake_list_height = 3
 
 " Autosave
 let g:auto_save = 1
