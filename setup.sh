@@ -70,6 +70,13 @@ if [ $platform == 'linux' ]; then
     mkdir -p $HOME/.config/alacritty
     ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
   fi
+
+elif [ $platform == 'osx' ]; then
+
+  # OSX SPECIFIC
+
+  if [ ! -L $HOME/.config/karabiner ]; then
+    ln -s $HOME/dotfiles/karabiner $HOME/.config/karabiner
+  fi
+
 fi
-
-
