@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   traefik:
-    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    command: --web --docker --docker.domain=docker.localhost
     networks:
       - webgateway
     container_name: traefik
