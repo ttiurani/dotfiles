@@ -54,17 +54,18 @@ fi
 # Exports
 
 export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
-export ANDROID_HOME="/opt/android-sdk"
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 if [[ $platform == 'linux' ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+  export ANDROID_HOME="/opt/android-sdk"
   export NODE_PATH="/usr/lib/node_modules"
   export CLOUDSDK_PYTHON=$(which python2)
 elif [[ $platform == 'osx' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
-  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
 
 export PATH=$PATH:$HOME/bin

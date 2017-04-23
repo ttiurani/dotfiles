@@ -26,11 +26,12 @@ let g:auto_save = 1
 set updatetime=1000
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 let g:auto_save_silent = 1
-let g:auto_save_presave_hook = 'call AbortIfNotGit()'
+let g:auto_save_presave_hook = 'call AutoSavePreSaveHook()'
 
-function! AbortIfNotGit()
-  " Use variable from the vim-fugitive plugin
-  if exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG'
+function! AutoSavePreSaveHook()
+  " Use variable from the vim-fugitive plugin for aborting if not bit
+  " olso abort if scala or java development with Eclim
+  if (exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG' && &ft!='java' && &ft!='scala')
     let g:auto_save_abort = 0
   else
     let g:auto_save_abort = 1
@@ -47,3 +48,19 @@ let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
 
 " FZF
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+" Codefmt
+Glaive codefmt plugin[mappings]
+Glaive codefmt google_java_executable="java -jar /Users/ttiurani/google-java-format-1.3-all-deps.jar"
+
+augroup autoformat_settings
+"  TODO: Enable autoformatting!
+"  autocmd FileType bzl AutoFormatBuffer buildifier
+"  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+"  autocmd FileType dart AutoFormatBuffer dartfmt
+"  autocmd FileType go AutoFormatBuffer gofmt
+"  autocmd FileType gn AutoFormatBuffer gn
+"  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+"  autocmd FileType java AutoFormatBuffer google-java-format
+"  autocmd FileType python AutoFormatBuffer yapf"
+augroup END

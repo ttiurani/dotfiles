@@ -27,6 +27,9 @@ Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-jdaddy'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -41,3 +44,4 @@ Plug 'ttiurani/vim-eclim'
 Plug 'leafgarland/typescript-vim'
 
 call plug#end()
+call glaive#Install()

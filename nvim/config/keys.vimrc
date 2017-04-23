@@ -26,18 +26,22 @@ endfunction
 " won't work for both linux and osx.
 map <C-m> <C-]>
 
+" Add mappings for moving in quickfix window
+nnoremap <Leader>j :cnext<cr>
+nnoremap <Leader>k :cprev<cr>
+
 " FZF mappings
 " https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220
 " {{{
   nnoremap <silent> <C-P> :Files<CR>
-  nnoremap <silent> <leader>o :BTags<CR>
-  nnoremap <silent> <leader>O :Tags<CR>
+  nnoremap <silent> <Leader>o :BTags<CR>
+  nnoremap <silent> <Leader>O :Tags<CR>
   nnoremap <silent> K :call SearchWordWithAg()<CR>
   vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
-  nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-  nnoremap <silent> <leader>. :AgIn<space>
-  nnoremap <silent> <leader>gl :Commits<CR>
-  nnoremap <silent> <leader>gb :BCommits<CR>
+  nnoremap <silent> <Leader>/ :execute 'Ag ' . input('Ag/')<CR>
+  nnoremap <silent> <Leader>. :AgIn<space>
+  nnoremap <silent> <Leader>gl :Commits<CR>
+  nnoremap <silent> <Leader>gb :BCommits<CR>
 
   function! SearchWordWithAg()
     execute 'Ag' expand('<cword>')
@@ -76,6 +80,10 @@ nnoremap <Right> :bnext<CR>
 " code completion using tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Eclim ctrl-x ctrl-o use ctrl-space insted
+" Eclim
+" ctrl-x ctrl-o use ctrl-space insted
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
+" ctrl I to JavaImport
+nnoremap <Leader>i :JavaImport <CR>
+" , space p for javadocs and enter for contentx
