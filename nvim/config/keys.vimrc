@@ -89,3 +89,6 @@ nnoremap <Leader>i :JavaImport <CR>
 " , space p for javadocs and enter for contentx
 autocmd FileType java map <silent> <buffer> <cr> :JavaSearchContext<cr>
 nnoremap <silent> <buffer> <Leader>p :JavaDocSearch -x declarations<cr>
+
+" Mapping for removing serch hits with backspace
+nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'
