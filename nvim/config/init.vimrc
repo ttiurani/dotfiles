@@ -18,8 +18,8 @@ Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
-Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-surround'
 
 " programming, general
 Plug 'neomake/neomake'
@@ -30,6 +30,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
+Plug 'alvan/vim-closetag'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'

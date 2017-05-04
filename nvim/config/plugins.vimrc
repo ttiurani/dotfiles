@@ -3,10 +3,8 @@ set termguicolors
 set background=dark
 colorscheme solarized
 
-" vim-tmux-navigator: only map up and down, left is broken, right is clear
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+" vim-tmux-navigator: save current buffer when switching
+let g:tmux_navigator_save_on_switch = 1
 
 " Neomake
 autocmd! BufWritePost,BufReadPost * Neomake
@@ -38,8 +36,13 @@ function! AutoSavePreSaveHook()
   endif
 endfunction
 
+" closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.xml"
+
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimJavaSearchSingleResult = 'edit'
+let g:EclimQuickFixHeight = 3
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

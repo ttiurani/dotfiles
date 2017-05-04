@@ -87,3 +87,5 @@ inoremap <C-@> <C-Space>
 " ctrl I to JavaImport
 nnoremap <Leader>i :JavaImport <CR>
 " , space p for javadocs and enter for contentx
+autocmd FileType java map <silent> <buffer> <cr> :JavaSearchContext<cr>
+nnoremap <silent> <buffer> <Leader>p :JavaDocSearch -x declarations<cr>
