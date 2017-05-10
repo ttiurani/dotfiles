@@ -44,5 +44,8 @@ Plug 'ttiurani/vim-eclim'
 " Typescript
 Plug 'leafgarland/typescript-vim'
 
+" Javascript
+Plug 'pangloss/vim-javascript'
+
 call plug#end()
 call glaive#Install()
