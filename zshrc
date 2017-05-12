@@ -87,6 +87,15 @@ function kfpl() {
   kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+')
 }
 
+# Kubernetes first (matching) container in Pod Log
+function kfcl() {
+  kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+') -c $2 
+}
+alias kuc='kubectl config use-context'
+alias kgc='kubectl config get-contexts'
+alias kgp='kubectl get pods'
+alias kgd='kubectl get deployments'
+
 # Git subrepo
 source ~/git-subrepo/.rc
 
