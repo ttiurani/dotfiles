@@ -20,6 +20,7 @@ function! CloseBufferAndPossiblyMoveToNext()
     execute(':bp')
   endif
 endfunction
+nnoremap <silent><Leader>D :Bonly<CR>
 
 " Map Ctrl-m to Ctrl-] (command for following links), since Ctrl-] doesn't
 " work with Finnish keyboard layout. Could not map to å because it in turn
