@@ -21,6 +21,8 @@ function! CloseBufferAndPossiblyMoveToNext()
   endif
 endfunction
 nnoremap <silent><Leader>D :Bonly<CR>
+" For netrw, it's more logical to just close the buffer with esc
+autocmd Filetype netrw nnoremap <buffer> <esc> :bd<CR>
 
 " Map Ctrl-m to Ctrl-] (command for following links), since Ctrl-] doesn't
 " work with Finnish keyboard layout. Could not map to å because it in turn
