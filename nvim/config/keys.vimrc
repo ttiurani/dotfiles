@@ -30,8 +30,10 @@ autocmd Filetype netrw nnoremap <buffer> <esc> :bd<CR>
 map <C-m> <C-]>
 
 " Add mappings for moving in quickfix window
-nnoremap <Leader>j :cnext<cr>
-nnoremap <Leader>k :cprev<cr>
+nnoremap <Leader>J :cnext<cr>
+nnoremap <Leader>K :cprev<cr>
+nnoremap <Leader>j :lnext<cr>
+nnoremap <Leader>k :lprev<cr>
 
 " FZF mappings
 " https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220

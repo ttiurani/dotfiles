@@ -17,7 +17,7 @@ let g:neomake_error_sign = {
   \ 'text': 'E',
   \ 'texthl': 'ErrorMsg',
   \ }
-let g:neomake_list_height = 3
+let g:neomake_list_height = 5
 
 " Autosave
 let g:auto_save = 1
@@ -27,7 +27,7 @@ let g:auto_save_silent = 1
 let g:auto_save_presave_hook = 'call AutoSavePreSaveHook()'
 
 function! AutoSavePreSaveHook()
-  " Use variable from the vim-fugitive plugin for aborting if not bit
+  " Use variable from the vim-fugitive plugin for aborting if not git
   " olso abort if scala or java development with Eclim
   if (exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG' && &ft!='java' && &ft!='scala')
     let g:auto_save_abort = 0
