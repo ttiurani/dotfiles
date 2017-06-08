@@ -5,3 +5,5 @@
 	editor = nano
 [init]
 	templatedir = ~/.git_template
+[pull]
+	rebase = true
