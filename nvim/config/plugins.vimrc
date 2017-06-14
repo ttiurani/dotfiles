@@ -22,14 +22,16 @@ let g:neomake_list_height = 5
 " Autosave
 let g:auto_save = 1
 set updatetime=1000
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
+" Only autosave when leaving inserting, this is a good
+" compromise, as TextChanged would save on every x pressed
+" which gets really slow really fast.
+let g:auto_save_events = ["InsertLeave"]
 let g:auto_save_silent = 1
 let g:auto_save_presave_hook = 'call AutoSavePreSaveHook()'
 
 function! AutoSavePreSaveHook()
   " Use variable from the vim-fugitive plugin for aborting if not git
-  " olso abort if scala or java development with Eclim
-  if (exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG' && &ft!='java' && &ft!='scala')
+  if (exists('b:git_dir') && expand('%:t') != 'COMMIT_EDITMSG')
     let g:auto_save_abort = 0
   else
     let g:auto_save_abort = 1
