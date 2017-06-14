@@ -35,6 +35,10 @@ nnoremap <Leader>K :cprev<cr>
 nnoremap <Leader>j :lnext<cr>
 nnoremap <Leader>k :lprev<cr>
 
+" Add mappings for H and L to move left and right
+nnoremap H :bprev<cr>
+nnoremap L :bnext<cr>
+
 " FZF mappings
 " https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220
 " {{{
