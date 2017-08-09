@@ -14,7 +14,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'taohex/lightline-buffer'
-Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
@@ -23,6 +22,7 @@ Plug 'tpope/vim-surround'
 
 " programming, general
 Plug 'neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'
 Plug 'jiangmiao/auto-pairs'
