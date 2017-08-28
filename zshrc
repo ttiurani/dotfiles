@@ -47,6 +47,7 @@ alias cleanreboot='docker rmi $(docker images --quiet --filter "dangling=true") 
 alias nvimem='nvim -S ~/.local/share/nvim/sessions/em.vim -c "Obsess ~/.local/share/nvim/sessions/em.vim"'
 alias nvimfa='nvim -S ~/.local/share/nvim/sessions/fa.vim -c "Obsess ~/.local/share/nvim/sessions/fa.vim"'
 alias nvimel='nvim -S ~/.local/share/nvim/sessions/el.vim -c "Obsess ~/.local/share/nvim/sessions/el.vim"'
+alias nvimnt='nvim -S ~/.local/share/nvim/sessions/nt.vim -c "Obsess ~/.local/share/nvim/sessions/nt.vim"'
 if [[ $platform == 'linux' ]]; then
    alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 fi
