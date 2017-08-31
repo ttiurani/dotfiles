@@ -74,6 +74,9 @@ nnoremap L :bnext<cr>
   command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
 " }}}
 
+" CTRL-r in visual mode to replace all occurances of word
+ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+
 " fugitive quick keys, from https://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/cgciltz/
 nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gst :Gstatus<CR>
