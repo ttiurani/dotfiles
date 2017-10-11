@@ -47,6 +47,7 @@ alias cleanreboot='docker rmi $(docker images --quiet --filter "dangling=true") 
 alias nvimem='nvim -S ~/.local/share/nvim/sessions/em.vim -c "Obsess ~/.local/share/nvim/sessions/em.vim"'
 alias nvimfa='nvim -S ~/.local/share/nvim/sessions/fa.vim -c "Obsess ~/.local/share/nvim/sessions/fa.vim"'
 alias nvimel='nvim -S ~/.local/share/nvim/sessions/el.vim -c "Obsess ~/.local/share/nvim/sessions/el.vim"'
+alias nvimnt='nvim -S ~/.local/share/nvim/sessions/nt.vim -c "Obsess ~/.local/share/nvim/sessions/nt.vim"'
 if [[ $platform == 'linux' ]]; then
    alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 fi
@@ -54,17 +55,18 @@ fi
 # Exports
 
 export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
-export ANDROID_HOME="/opt/android-sdk"
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 if [[ $platform == 'linux' ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+  export ANDROID_HOME="/opt/android-sdk"
   export NODE_PATH="/usr/lib/node_modules"
   export CLOUDSDK_PYTHON=$(which python2)
 elif [[ $platform == 'osx' ]]; then
   export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
-  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
 
 export PATH=$PATH:$HOME/bin
@@ -86,6 +88,15 @@ function kfpl() {
   kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+')
 }
 
+# Kubernetes first (matching) container in Pod Log
+function kfcl() {
+  kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+') -c $2 
+}
+alias kuc='kubectl config use-context'
+alias kgc='kubectl config get-contexts'
+alias kgp='kubectl get pods'
+alias kgd='kubectl get deployments'
+
 # Git subrepo
 source ~/git-subrepo/.rc
 
@@ -93,3 +104,7 @@ source ~/git-subrepo/.rc
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="/usr/local/opt/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

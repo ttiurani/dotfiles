@@ -16,3 +16,7 @@ brew cask install java
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
 ```
+
+# iTerm2 customization
+
+https://github.com/junegunn/fzf.vim/issues/54#issuecomment-235280717
