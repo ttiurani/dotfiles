@@ -21,7 +21,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 
 " programming, general
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim'

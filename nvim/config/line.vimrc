@@ -16,15 +16,17 @@ let g:lightline = {
       \   'right': [ [ 'close' ], ]
       \ },
       \ 'component_expand': {
-      \   'buffercurrent': 'lightline#buffer#buffercurrent2'
-      \ },
-      \ 'component_type': {
-      \   'buffercurrent': 'tabsel'
-      \ },
-      \ 'component_function': {
+      \   'buffercurrent': 'lightline#buffer#buffercurrent',
       \   'bufferbefore': 'lightline#buffer#bufferbefore',
       \   'bufferafter': 'lightline#buffer#bufferafter',
-      \   'bufferinfo': 'lightline#buffer#bufferinfo'
+      \ },
+      \ 'component_type': {
+      \   'buffercurrent': 'tabsel',
+      \   'bufferbefore': 'raw',
+      \   'bufferafter': 'raw',
+      \ },
+      \ 'component_function': {
+      \   'bufferinfo': 'lightline#buffer#bufferinfo',
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],

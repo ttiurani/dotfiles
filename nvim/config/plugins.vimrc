@@ -6,18 +6,12 @@ colorscheme solarized
 " vim-tmux-navigator: save current buffer when switching
 let g:tmux_navigator_save_on_switch = 1
 
-" Neomake
-autocmd! BufWritePost,BufReadPost * Neomake
-let g:neomake_open_list = 2
-let g:neomake_warning_sign = {
-  \ 'text': 'W',
-  \ 'texthl': 'WarningMsg',
-  \ }
-let g:neomake_error_sign = {
-  \ 'text': 'E',
-  \ 'texthl': 'ErrorMsg',
-  \ }
-let g:neomake_list_height = 5
+" Ale
+let g:ale_completion_enabled = 1
+
+" vim-gutentags
+let g:gutentags_ctags_exclude = ['*node_modules*', '*build*', '.git', '*target*']
+let g:gutentags_ctags_tagfile = '.git/tags'
 
 " closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.nunjucks"
@@ -47,6 +41,6 @@ augroup autoformat_settings
 "  autocmd FileType go AutoFormatBuffer gofmt
 "  autocmd FileType gn AutoFormatBuffer gn
 "  autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
+"  autocmd FileType java AutoFormatBuffer google-java-format
 "  autocmd FileType python AutoFormatBuffer yapf"
 augroup END

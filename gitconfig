@@ -2,7 +2,7 @@
 	email = timo.tiuraniemi@iki.fi
 	name = Timo Tiuraniemi
 [core]
-	editor = nano
+	editor = nvim
 [init]
 	templatedir = ~/.git_template
 [pull]
