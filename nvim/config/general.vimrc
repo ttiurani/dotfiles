@@ -21,6 +21,3 @@ autocmd BufWritePre *.vim,*.vimrc,*.c,*.php,*.scala,*.java,*.python,*.ts,*.js,*.
 
 " Disable cliboard http://stackoverflow.com/a/39741226
 set clipboard=unnamed
-
-" Set tags
-set tags=./tags,tags;
