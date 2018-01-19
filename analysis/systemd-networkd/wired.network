@@ -2,6 +2,7 @@
 Name=enp7s0
 
 [Network]
-DHCP=ipv4
-DNS=8.8.8.8
-DNS=8.8.4.4
+Address=212.146.21.102
+Gateway=212.146.21.1
+DNS=62.241.198.245
+DNS=62.241.198.246
