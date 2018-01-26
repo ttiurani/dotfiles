@@ -97,9 +97,6 @@ alias kgc='kubectl config get-contexts'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
 
-# Git subrepo
-source ~/git-subrepo/.rc
-
 # AG and FZF
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
