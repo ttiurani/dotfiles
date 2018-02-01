@@ -63,7 +63,8 @@ if [[ $platform == 'linux' ]]; then
   export NODE_PATH="/usr/lib/node_modules"
   export CLOUDSDK_PYTHON=$(which python2)
 elif [[ $platform == 'osx' ]]; then
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  # "-v 9" or "-v 1.8" can be used here
+  export JAVA_HOME="$(/usr/libexec/java_home -v 9)"
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
   export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
