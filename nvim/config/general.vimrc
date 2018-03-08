@@ -21,3 +21,9 @@ autocmd BufWritePre *.vim,*.vimrc,*.c,*.php,*.scala,*.java,*.python,*.ts,*.js,*.
 
 " Disable cliboard http://stackoverflow.com/a/39741226
 set clipboard=unnamed
+
+" Set undo
+set undofile
+set undodir=$HOME/.config/nvim/undo
+set undolevels=1000
+set undoreload=10000

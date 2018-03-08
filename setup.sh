@@ -29,8 +29,8 @@ if [ ! -L $HOME/.zshrc ]; then
 fi
 
 # nvim
-if [ ! -d $HOME/.config ]; then
-  mkdir $HOME/.config
+if [ ! -d $HOME/.config/nvim ]; then
+  mkdir $HOME/.config/nvim/undo
 fi
 if [ ! -L $HOME/.config/nvim ]; then
   ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
