@@ -36,6 +36,11 @@ if [ ! -L $HOME/.config/nvim ]; then
   ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 fi
 
+# vrapper
+if [ ! -L $HOME/.config/vrapper ]; then
+  ln -s $HOME/dotfiles/vrapper $HOME/.config/vrapper
+fi
+
 # tmux
 if [ ! -L $HOME/.tmux.conf ]; then
   ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
