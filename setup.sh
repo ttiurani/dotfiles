@@ -36,6 +36,11 @@ if [ ! -L $HOME/.config/nvim ]; then
   ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 fi
 
+# ideavim
+if [ ! -L $HOME/.ideavimrc ]; then
+  ln -s $HOME/dotfiles/ideavimrc $HOME/.ideavimrc
+fi
+
 # vrapper
 if [ ! -L $HOME/.config/vrapper ]; then
   ln -s $HOME/dotfiles/vrapper $HOME/.config/vrapper

@@ -1,0 +1,7 @@
+imap jk <Esc>
+set timeoutlen=500
+let mapleader = " "
+nnoremap <Leader>s :update<CR>
+nnoremap gcc :action CommentByLineComment<cr>
+vnoremap gc :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<CR>
+

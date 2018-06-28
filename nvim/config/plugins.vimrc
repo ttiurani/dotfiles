@@ -16,15 +16,14 @@ let g:gutentags_ctags_tagfile = '.git/tags'
 " closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.nunjucks"
 
-" Eclim
-let g:EclimCompletionMethod = 'omnifunc'
-let g:EclimJavaSearchSingleResult = 'edit'
-let g:EclimQuickFixHeight = 3
+" Language Client
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {}
+let g:LanguageClient_serverCommands.java = ['java-lang-server.sh']
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
+call deoplete#custom#option('omni_patterns', { 'java': '[^. *\t]\.\w*' })
 
 " FZF
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

@@ -93,15 +93,8 @@ nnoremap <Right> :bnext<CR>
 " code completion using tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Eclim
-" ctrl-x ctrl-o use ctrl-space insted
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
-" ctrl I to JavaImport
-nnoremap <Leader>i :JavaImport <CR>
-" , space p for javadocs and enter for contentx
-autocmd FileType java map <silent> <buffer> <cr> :JavaSearchContext<cr>
-nnoremap <silent> <buffer> <Leader>p :JavaDocSearch -x declarations<cr>
+" options to for fixing using LanguageClietn
+nnoremap <C-Space> :call LanguageClient_textDocument_codeAction()<CR>
 
 " Mapping for removing serch hits with backspace
 nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'

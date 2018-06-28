@@ -58,19 +58,16 @@ export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 if [[ $platform == 'linux' ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
   export ANDROID_HOME="/opt/android-sdk"
   export NODE_PATH="/usr/lib/node_modules"
   export CLOUDSDK_PYTHON=$(which python2)
 elif [[ $platform == 'osx' ]]; then
-  # "-v 9" or "-v 1.8" can be used here
-  export JAVA_HOME="$(/usr/libexec/java_home -v 9)"
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
-  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:./node_modules/bin
 fi
 
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.jenv/bin
 
 # Google Cloud SDK
 
@@ -106,3 +103,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export NVM_DIR="/usr/local/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# JENV
+eval "$(jenv init -)"

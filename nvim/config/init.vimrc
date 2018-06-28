@@ -25,7 +25,8 @@ Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'tpope/vim-commentary'
-Plug 'Shougo/deoplete.nvim'
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
@@ -38,9 +39,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Scala
 Plug 'derekwyatt/vim-scala'
-
-" Eclipse development through eclim
-Plug 'ttiurani/vim-eclim'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
