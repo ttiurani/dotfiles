@@ -90,11 +90,33 @@ nnoremap <Leader>gl :Gpull<CR>
 nnoremap <Left> :bprev<CR>
 nnoremap <Right> :bnext<CR>
 
-" code completion using tab
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" coc.vim mappings
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+vmap <Leader>a  <Plug>(coc-codeaction-selected)
+nmap <Leader>a  <Plug>(coc-codeaction-selected)
+nmap <Leader>ac  <Plug>(coc-codeaction)
 
-" options to for fixing using LanguageClietn
-nnoremap <C-Space> :call LanguageClient_textDocument_codeAction()<CR>
+" Tagbar mapping
+nmap <Leader>8 :TagbarToggle<CR>
+
+" mappings for vim-maven-plugin, used now only for the b:_mvn_project variable
+" and setup of mapping to folder
+autocmd BufNewFile,BufReadPost *.* call s:SetupMavenMap()
+function! <SID>SetupMavenMap()
+  doautocmd MavenAutoDetect BufNewFile,BufReadPost
+
+  if !maven#isBufferUnderMavenProject(bufnr("%"))
+    return
+  endif
+
+  " Execute testing in another window
+  let CURRENT_FUNCTION = substitute(substitute(tagbar#currenttag("%s", "", "f"), "()", "", ""), "\\.", "#", "")
+  nmap <buffer> <Leader>5 :execute ':terminal mvn -f ' . b:_mvn_project . '/pom.xml surefire:test -Dtest=' . CURRENT_FUNCTION . ' -DfailIfNoTests=false --offline -Dgib.enabled=false'<CR>
+
+endfunction
 
 " Mapping for removing serch hits with backspace
 nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'

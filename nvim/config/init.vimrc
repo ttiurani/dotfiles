@@ -13,26 +13,23 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
-Plug 'taohex/lightline-buffer'
+Plug 'taohexxx/lightline-buffer'
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
 
 " programming, general
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'benjie/neomake-local-eslint.vim'
 Plug 'tpope/vim-commentary'
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
 Plug 'alvan/vim-closetag'
+Plug 'mikelue/vim-maven-plugin'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -47,4 +44,3 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
-call glaive#Install()

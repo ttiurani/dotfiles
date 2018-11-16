@@ -54,7 +54,7 @@ fi
 
 # Exports
 
-export MAVEN_OPTS="-Xms1024m -Xmx4096m -Xss8M"
+export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xms1024m -Xmx4096m -Xss8M"
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 if [[ $platform == 'linux' ]]; then
