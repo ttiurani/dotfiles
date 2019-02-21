@@ -83,13 +83,13 @@ fi
 source <(kubectl completion zsh)
 # Kubernetes First (matching) Pod Log
 function kfpl() {
-  kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+')
+  if [ -z "$2" ]; then
+    kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+')
+  else
+    kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+') -c $2
+  fi
 }
 
-# Kubernetes first (matching) container in Pod Log
-function kfcl() {
-  kubectl logs -f $(kubectl get pods | grep $1 | head -1 | grep -Eo '^[^ ]+') -c $2 
-}
 alias kuc='kubectl config use-context'
 alias kgc='kubectl config get-contexts'
 alias kgp='kubectl get pods'
