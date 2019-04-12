@@ -98,6 +98,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 vmap <Leader>a  <Plug>(coc-codeaction-selected)
 nmap <Leader>a  <Plug>(coc-codeaction-selected)
 nmap <Leader>ac  <Plug>(coc-codeaction)
+nnoremap <Leader>q :<C-u>CocList diagnostics<cr>
 
 " Tagbar mapping
 nmap <Leader>8 :TagbarToggle<CR>
@@ -113,9 +114,15 @@ function! <SID>SetupMavenMap()
   endif
 
   " Execute testing in another window
-  let CURRENT_FUNCTION = substitute(substitute(tagbar#currenttag("%s", "", "f"), "()", "", ""), "\\.", "#", "")
-  nmap <buffer> <Leader>5 :execute ':terminal mvn -f ' . b:_mvn_project . '/pom.xml surefire:test -Dtest=' . CURRENT_FUNCTION . ' -DfailIfNoTests=false --offline -Dgib.enabled=false'<CR>
+  nmap <buffer> <Leader>5 :call RunMavenTest()<CR>
 
+endfunction
+
+function! RunMavenTest()
+  let l:currentFunction = substitute(substitute(tagbar#currenttag("%s", "", "f"), "()", "", ""), "\\.", "\\#", "")
+  let l:mvnCommand = 'mvn -f ' . b:_mvn_project . '/pom.xml surefire:test -Dtest=' . l:currentFunction . ' -DfailIfNoTests=false --offline -Dgib.enabled=false'
+  enew
+  call termopen(l:mvnCommand)
 endfunction
 
 " Mapping for removing serch hits with backspace

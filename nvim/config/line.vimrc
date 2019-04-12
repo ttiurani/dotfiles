@@ -27,6 +27,7 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'bufferinfo': 'lightline#buffer#bufferinfo',
+      \   'filename': 'LightlineFilename',
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -45,6 +46,15 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 " lightline-buffer settings
 
