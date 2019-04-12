@@ -39,6 +39,11 @@ Plug 'derekwyatt/vim-scala'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
+" TODO: Needed until https://github.com/leafgarland/typescript-vim/pull/140 is fixed
+Plug 'ianks/vim-tsx'
+
+" Clojure
+Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Javascript
 Plug 'pangloss/vim-javascript'

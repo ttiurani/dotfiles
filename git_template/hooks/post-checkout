@@ -1,2 +1,4 @@
 #!/bin/bash
-.git/hooks/prepare-git-config
+if [ -f .git/hooks/prepare-git-config ]; then
+  .git/hooks/prepare-git-config
+fi
