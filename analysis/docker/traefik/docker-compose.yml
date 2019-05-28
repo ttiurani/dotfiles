@@ -1,11 +1,11 @@
 version: "3.0"
 services:
   traefik:
-    command: --web --docker --docker.domain=docker.localhost
+    command: --api --docker
     networks:
       - webgateway
     container_name: traefik
-    image: containous/traefik:latest
+    image: traefik:1.7.11
     labels:
       - "traefik.backend=traefik"
       - "traefik.enable=true"
