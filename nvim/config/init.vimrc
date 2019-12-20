@@ -43,7 +43,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 
 " Clojure
-Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Javascript
 Plug 'pangloss/vim-javascript'
