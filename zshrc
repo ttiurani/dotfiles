@@ -95,16 +95,31 @@ alias kgc='kubectl config get-contexts'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
 
+# OC
+
 source <(oc completion zsh)
+
+# Git
+
+function gtg() {
+  git tag --sort=v:refname | grep "^$1"
+}
 
 # AG and FZF
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="/usr/local/opt/nvm"
+# NVM
+
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # JENV
+
 eval "$(jenv init -)"
+
+# BR
+
+source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
