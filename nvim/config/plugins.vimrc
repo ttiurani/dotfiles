@@ -3,6 +3,7 @@ set termguicolors
 set background=dark
 let g:solarized_contrast="high"
 colorscheme solarized
+call togglebg#map("<F5>")
 
 " vim-tmux-navigator: save current buffer when switching
 let g:tmux_navigator_save_on_switch = 1
