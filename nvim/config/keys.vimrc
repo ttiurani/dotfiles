@@ -116,6 +116,9 @@ function! <SID>SetupMavenMap()
   " Execute testing in another window
   nmap <buffer> <Leader>5 :call RunMavenTest()<CR>
 
+  " Switch between source and test file, DOES NOT WORK, WHY?
+  nmap <buffer> <Leader>6  <Plug>MavenSwitchUnittestFile
+
 endfunction
 
 function! RunMavenTest()

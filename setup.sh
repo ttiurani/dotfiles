@@ -49,6 +49,8 @@ fi
 # tmux
 if [ ! -L $HOME/.tmux.conf ]; then
   ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
+  tic -x $HOME/dotfiles/term/xterm-256color-italic.terminfo
+  tic -x $HOME/dotfiles/term/tmux-256color.terminfo
 fi
 
 # ctags

@@ -1,7 +1,7 @@
 " solarized: https://github.com/frankier/neovim-colors-solarized-truecolor-only
 set termguicolors
 set background=dark
-let g:solarized_italic = 0
+let g:solarized_contrast="high"
 colorscheme solarized
 
 " vim-tmux-navigator: save current buffer when switching
