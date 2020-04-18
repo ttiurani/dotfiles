@@ -11,7 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="proze"
+ZSH_THEME="agnoster"
 plugins=(git mvn tmux vi-mode)
 
 # User configuration
@@ -123,3 +123,6 @@ eval "$(jenv init -)"
 # BR
 
 source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+# Hide zsh prompt
+prompt_context(){}
