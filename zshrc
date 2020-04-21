@@ -120,9 +120,5 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(jenv init -)"
 
-# BR
-
-source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
-
 # Hide zsh prompt
 prompt_context(){}
