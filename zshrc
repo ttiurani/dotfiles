@@ -107,7 +107,7 @@ function gtg() {
 
 # AG and FZF
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # NVM

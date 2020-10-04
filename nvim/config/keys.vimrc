@@ -45,18 +45,18 @@ nnoremap L :bnext<cr>
   nnoremap <silent> <C-P> :Files<CR>
   nnoremap <silent> <Leader>o :BTags<CR>
   nnoremap <silent> <Leader>O :Tags<CR>
-  nnoremap <silent> K :call SearchWordWithAg()<CR>
-  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
-  nnoremap <silent> <Leader>/ :execute 'Ag ' . input('Ag/')<CR>
-  nnoremap <silent> <Leader>. :AgIn<space>
+  nnoremap <silent> K :call SearchWordWithRg()<CR>
+  vnoremap <silent> K :call SearchVisualSelectionWithRg()<CR>
+  nnoremap <silent> <Leader>/ :execute 'Rg ' . input('Rg/')<CR>
+  nnoremap <silent> <Leader>. :RgIn<space>
   nnoremap <silent> <Leader>gl :Commits<CR>
   nnoremap <silent> <Leader>gb :BCommits<CR>
 
-  function! SearchWordWithAg()
-    execute 'Ag' expand('<cword>')
+  function! SearchWordWithRg()
+    execute 'Rg' expand('<cword>')
   endfunction
 
-  function! SearchVisualSelectionWithAg() range
+  function! SearchVisualSelectionWithRg() range
     let old_reg = getreg('"')
     let old_regtype = getregtype('"')
     let old_clipboard = &clipboard
@@ -65,13 +65,13 @@ nnoremap L :bnext<cr>
     let selection = getreg('"')
     call setreg('"', old_reg, old_regtype)
     let &clipboard = old_clipboard
-    execute 'Ag' selection
+    execute 'Rg' selection
   endfunction
 
-  function! SearchWithAgInDirectory(...)
+  function! SearchWithRgInDirectory(...)
     call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
   endfunction
-  command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
+  command! -nargs=+ -complete=dir RgIn call SearchWithRgInDirectory(<f-args>)
 " }}}
 
 " CTRL-r in visual mode to replace all occurances of word
