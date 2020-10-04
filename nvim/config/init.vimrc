@@ -20,6 +20,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
+Plug 'mcchrish/nnn.vim'
 
 " programming, general
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}

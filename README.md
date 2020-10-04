@@ -11,7 +11,7 @@ Minimum requirements for nvim:
 
 ```
 brew update
-brew install node tmux maven python3 ripgrep neovim/neovim/neovim tig reattach-to-user-namespace
+brew install node tmux maven python3 ripgrep neovim/neovim/neovim nnn tig reattach-to-user-namespace
 brew cask install java
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
