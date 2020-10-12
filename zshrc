@@ -96,8 +96,9 @@ alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
 
 # OC
-
-source <(oc completion zsh)
+if type "$oc" > /dev/null; then
+  source <(oc completion zsh)
+fi
 
 # Git
 
