@@ -67,7 +67,7 @@ elif [[ $platform == 'osx' ]]; then
   export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:./node_modules/bin
 fi
 
-export PATH=$PATH:$HOME/bin:$HOME/.jenv/bin
+export PATH=$PATH:$HOME/bin:$HOME/.jenv/bin:$HOME/.cargo/bin
 
 # Google Cloud SDK
 

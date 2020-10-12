@@ -130,6 +130,3 @@ endfunction
 
 " Mapping for removing serch hits with backspace
 nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'
-
-" Mapping nnn instead of netrw to dash
-nnoremap <silent> - :Np<CR>
