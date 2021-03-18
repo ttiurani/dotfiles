@@ -30,3 +30,6 @@ set undoreload=10000
 
 " Set tags for vim-fugitive
 set tags^=.git/tags
+
+" Set spelling
+set spelllang=en

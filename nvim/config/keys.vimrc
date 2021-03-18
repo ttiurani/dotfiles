@@ -130,3 +130,7 @@ endfunction
 
 " Mapping for removing serch hits with backspace
 nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'
+
+" Spelling toggle to leader 9
+nnoremap <silent> <Leader>9 :set spell!<cr>
+inoremap <silent> <Leader>9 <C-O>:set spell!<cr>
