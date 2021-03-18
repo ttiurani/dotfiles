@@ -1,5 +1,6 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.errors.incompleteClasspath.severity": "ignore",
-  "rust-analyzer.checkOnSave.command": "clippy"
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "coc.preferences.formatOnSaveFiletypes": ["rust"]
 }
