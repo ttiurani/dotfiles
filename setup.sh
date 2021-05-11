@@ -23,6 +23,11 @@ if [ ! -L $HOME/.git_template ]; then
   ln -s $HOME/dotfiles/git_template $HOME/.git_template
 fi
 
+# rg
+if [ ! -L $HOME/.ripgreprc ]; then
+  ln -s $HOME/dotfiles/ripgreprc $HOME/.ripgreprc
+fi
+
 # zsh
 if [ ! -L $HOME/.zshrc ]; then
   ln -s $HOME/dotfiles/zshrc $HOME/.zshrc

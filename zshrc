@@ -121,5 +121,9 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(jenv init -)"
 
+# RG
+
+export RIPGREP_CONFIG_PATH=${HOME}/.ripgreprc
+
 # Hide zsh prompt
 prompt_context(){}
