@@ -15,8 +15,5 @@ let g:gutentags_ctags_tagfile = '.git/tags'
 " closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.nunjucks"
 
-" FZF
-let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-
 " NNN
 let g:nnn#replace_netrw = 1

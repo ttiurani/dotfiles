@@ -69,7 +69,7 @@ nnoremap L :bnext<cr>
   endfunction
 
   function! SearchWithRgInDirectory(...)
-    call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
+    call fzf#vim#rg(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
   endfunction
   command! -nargs=+ -complete=dir RgIn call SearchWithRgInDirectory(<f-args>)
 " }}}
