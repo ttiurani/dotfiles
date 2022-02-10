@@ -5,11 +5,11 @@ syntax enable
 " line numbers
 set number
 
-" tab is always two spaces
-set tabstop=2
-set softtabstop=2
+" tab is four spaces
+set tabstop=4
+set softtabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set smartindent
 
 " Always utf8
