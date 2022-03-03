@@ -63,10 +63,12 @@ if [[ $platform == 'linux' ]]; then
 elif [[ $platform == 'osx' ]]; then
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
-  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:./node_modules/bin
+  export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:./node_modules/bin
 fi
 
-export PATH=$PATH:$HOME/bin:$HOME/.jenv/bin:$HOME/.cargo/bin
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/21.4.7075529"
+
+export PATH=$PATH:$HOME/bin:$HOME/.jenv/bin:$HOME/.cargo/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # Google Cloud SDK
 
