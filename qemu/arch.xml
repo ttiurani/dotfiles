@@ -27,11 +27,11 @@
         <controller type='usb' model='ehci'/>
         <disk type='file' device='disk'>
             <driver name='qemu' type='qcow2'/>
-            <source file='/Users/ttiurani/vms/arch.qcow2'/>
+            <source file='~/vms/arch.qcow2'/>
             <target dev='vda' bus='virtio'/>
         </disk>
         <disk type='file' device='cdrom'>
-            <source file='/Users/ttiurani/Downloads/archlinux-2020.10.01-x86_64.iso'/>
+            <source file='~/archlinux-2020.10.01-x86_64.iso'/>
             <target dev='sdb' bus='sata'/>
         </disk>
         <console type='pty'>
