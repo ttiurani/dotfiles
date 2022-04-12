@@ -90,43 +90,8 @@ nnoremap <Leader>gl :Gpull<CR>
 nnoremap <Left> :bprev<CR>
 nnoremap <Right> :bnext<CR>
 
-" coc.vim mappings
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-vmap <Leader>a  <Plug>(coc-codeaction-selected)
-nmap <Leader>a  <Plug>(coc-codeaction-selected)
-nmap <Leader>ac  <Plug>(coc-codeaction)
-nnoremap <Leader>q :<C-u>CocList diagnostics<cr>
-
 " Tagbar mapping
 nmap <Leader>8 :TagbarToggle<CR>
-
-" mappings for vim-maven-plugin, used now only for the b:_mvn_project variable
-" and setup of mapping to folder
-autocmd BufNewFile,BufReadPost *.* call s:SetupMavenMap()
-function! <SID>SetupMavenMap()
-  doautocmd MavenAutoDetect BufNewFile,BufReadPost
-
-  if !maven#isBufferUnderMavenProject(bufnr("%"))
-    return
-  endif
-
-  " Execute testing in another window
-  nmap <buffer> <Leader>5 :call RunMavenTest()<CR>
-
-  " Switch between source and test file, DOES NOT WORK, WHY?
-  nmap <buffer> <Leader>6  <Plug>MavenSwitchUnittestFile
-
-endfunction
-
-function! RunMavenTest()
-  let l:currentFunction = substitute(substitute(tagbar#currenttag("%s", "", "f"), "()", "", ""), "\\.", "\\#", "")
-  let l:mvnCommand = 'mvn -f ' . b:_mvn_project . '/pom.xml surefire:test -Dtest=' . l:currentFunction . ' -DfailIfNoTests=false --offline -Dgib.enabled=false'
-  enew
-  call termopen(l:mvnCommand)
-endfunction
 
 " Mapping for removing serch hits with backspace
 nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'

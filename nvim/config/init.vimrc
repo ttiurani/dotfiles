@@ -23,17 +23,20 @@ Plug 'majutsushi/tagbar'
 Plug 'mcchrish/nnn.vim'
 
 " programming, general
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
 Plug 'alvan/vim-closetag'
-Plug 'mikelue/vim-maven-plugin'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
+
+" Rust
+Plug 'simrat39/rust-tools.nvim'
 
 " Scala
 Plug 'derekwyatt/vim-scala'
@@ -43,10 +46,16 @@ Plug 'leafgarland/typescript-vim'
 " TODO: Needed until https://github.com/leafgarland/typescript-vim/pull/140 is fixed
 Plug 'ianks/vim-tsx'
 
-" Clojure
-" Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
+" Kotlin
+Plug 'udalov/kotlin-vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
+
+" Svelte
+Plug 'leafOfTree/vim-svelte-plugin'
+
+" TOML
+Plug 'cespare/vim-toml'
 
 call plug#end()

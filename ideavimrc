@@ -1,7 +1,8 @@
 imap jk <Esc>
 set timeoutlen=500
 let mapleader = " "
+set clipboard+=unnamed
 nnoremap <Leader>s :action SaveAll<CR>
 nnoremap gcc :action CommentByLineComment<cr>
+nnoremap <C-M> :action GotoImplementation<CR>
 vnoremap gc :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<CR>
-
