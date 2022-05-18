@@ -1,4 +1,4 @@
-<domain type='qemu' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+<domain type='hvf' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
     <name>arch</name>
     <uuid>2AF1F9C5-A16C-40C0-A519-0E3016DC0652</uuid>
     <memory unit='GB'>8</memory>
@@ -47,7 +47,7 @@
     <seclabel type='none'/>
     <qemu:commandline>
         <qemu:arg value='-machine'/>
-        <qemu:arg value='type=q35,accel=hvf'/>
+        <qemu:arg value='type=q35'/>
         <qemu:arg value='-netdev'/>
         <qemu:arg value='user,id=n1,hostfwd=tcp::2222-:22'/>
         <qemu:arg value='-device'/>
