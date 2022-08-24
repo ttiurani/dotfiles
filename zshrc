@@ -46,10 +46,15 @@ unsetopt nomatch
 alias l='exa -lh --git --all --no-permissions'
 alias la='exa -lh --git --all --octal-permissions'
 alias nvimem='nvim -S ~/.local/share/nvim/sessions/em.vim -c "Obsess ~/.local/share/nvim/sessions/em.vim"'
+alias nvimtt='nvim -S ~/.local/share/nvim/sessions/tt.vim -c "Obsess ~/.local/share/nvim/sessions/tt.vim"'
 alias nvimxr='nvim -S ~/.local/share/nvim/sessions/xr.vim -c "Obsess ~/.local/share/nvim/sessions/xr.vim"'
+alias sudo='sudo '
 if [[ $platform == 'linux' ]]; then
    alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
+elif [[ $platform == 'osx' ]]; then
+   alias wifi='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
 fi
+
 
 # Exports
 

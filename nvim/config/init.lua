@@ -69,7 +69,9 @@ local opts = {
     },
 }
 require('rust-tools').setup(opts)
+require'lspconfig'.tsserver.setup{}
 require'lspconfig'.svelte.setup{}
+
 -- NOTE: Android does not work with the language server, due to R not found etc.
 -- require'lspconfig'.kotlin_language_server.setup{
 --     root_dir = { 'build.gradle' }

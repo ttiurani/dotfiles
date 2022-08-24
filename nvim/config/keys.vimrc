@@ -24,10 +24,12 @@ nnoremap <silent><Leader>D :Bonly<CR>
 " For netrw, it's more logical to just close the buffer with esc
 autocmd Filetype netrw nnoremap <buffer> <esc> :bd<CR>
 
-" Map Ctrl-m to Ctrl-] (command for following links), since Ctrl-] doesn't
+" Map Ctrl-y to Ctrl-] (command for following links), since Ctrl-] doesn't
 " work with Finnish keyboard layout. Could not map to å because it in turn
-" won't work for both linux and osx.
-map <C-m> <C-]>
+" won't work for both linux and osx. Could not map to m because that is
+" and equivalent to carriage return and subsequently broke. Now C-y and C-t
+" are right next to each other which kind of makes sense.
+map <C-y> <C-]>
 
 " Add mappings for moving in quickfix window
 nnoremap <Leader>J :cnext<cr>
