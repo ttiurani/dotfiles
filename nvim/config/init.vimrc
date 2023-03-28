@@ -4,7 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
 
 " colorschemes
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'tjdevries/colorbuddy.nvim'
+Plug 'svrana/neosolarized.nvim'
 
 " general
 Plug 'christoomey/vim-tmux-navigator'
@@ -31,6 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
 Plug 'alvan/vim-closetag'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'

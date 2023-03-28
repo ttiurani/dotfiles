@@ -1,9 +1,16 @@
-" solarized: https://github.com/frankier/neovim-colors-solarized-truecolor-only
+" solarized: https://github.com/svrana/neosolarized.nvim/
 set termguicolors
 set background=dark
-let g:solarized_contrast="high"
-colorscheme solarized
-call togglebg#map("<F5>")
+function ToggleBackgroundOfEditor()
+    if (&background == "dark")
+      let &background = "light"
+      colorscheme default
+    else
+      let &background = "dark"
+      colorscheme neosolarized
+    endif
+endfunction
+nnoremap <silent> <F5> :call ToggleBackgroundOfEditor()<cr>
 
 " vim-tmux-navigator: save current buffer when switching
 let g:tmux_navigator_save_on_switch = 1
@@ -23,3 +30,9 @@ let g:rustfmt_autosave = 1
 
 " vim-svelte-plugin
 let g:vim_svelte_plugin_use_typescript = 1
+
+" Code folding with TreeSitter from
+" https://www.jmaguire.tech/posts/treesitter_folding/
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+autocmd BufReadPost,FileReadPost * normal zR
