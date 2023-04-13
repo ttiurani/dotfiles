@@ -22,6 +22,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'mcchrish/nnn.vim'
+Plug 'nvim-lua/plenary.nvim'
 
 " programming, general
 Plug 'neovim/nvim-lspconfig'

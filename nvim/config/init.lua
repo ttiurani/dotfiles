@@ -137,7 +137,15 @@ end
 require('rust-tools').setup({
     server = {
         standalone = false,
-        on_attach = on_attach
+        on_attach = on_attach,
+        settings = {
+			["rust-analyzer"] = {
+				check = {
+					command = "clippy",
+					extraArgs = { "--all", "--", "-W", "clippy::all" },
+				},
+			},
+		},
     },
 })
 require'lspconfig'.tsserver.setup{
@@ -156,8 +164,8 @@ require'lspconfig'.svelte.setup{
 vim.cmd [[
     augroup Format
       autocmd!
-        autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-        autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 1000)
-        autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 1000)
+        autocmd BufWritePre *.rs lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
+        autocmd BufWritePre *.ts lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
+        autocmd BufWritePre *.tsx lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
       augroup END
     ]]
