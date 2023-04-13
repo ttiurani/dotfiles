@@ -125,5 +125,8 @@ if [[ $platform == 'osx' ]]; then
   eval "$(jenv init -)"
 fi
 
+# Go
+export GOPATH=${HOME}/devel/go
+
 # Hide zsh prompt
 prompt_context(){}
