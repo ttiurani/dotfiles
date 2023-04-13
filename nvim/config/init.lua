@@ -66,7 +66,7 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "help", "query", "rust", "typescript", "kotlin" },
+  ensure_installed = { "c", "lua", "vim", "query", "rust", "typescript", "kotlin" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

@@ -34,11 +34,16 @@ if [ ! -L $HOME/.zshrc ]; then
 fi
 
 # nvim
-if [ ! -d $HOME/.config/nvim ]; then
-  mkdir $HOME/.config/nvim/undo
-fi
 if [ ! -L $HOME/.config/nvim ]; then
   ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
+fi
+if [ ! -d $HOME/.config/nvim/undo ]; then
+  mkdir -p $HOME/.config/nvim/undo
+fi
+
+# wezterm
+if [ ! -L $HOME/.config/wezterm ]; then
+  ln -s $HOME/dotfiles/wezterm $HOME/.config/wezterm
 fi
 
 # ideavim
@@ -63,29 +68,13 @@ if [ ! -L $HOME/.ctags ]; then
   ln -s $HOME/dotfiles/ctags $HOME/.ctags
 fi
 
-# LINUX SPECIFIC
 
 if [ $platform == 'linux' ]; then
-  alias swaywm='export XKB_DEFAULT_LAYOUT=fi && sway -d 2> ~/sway.log'
 
-  if [ ! -L $HOME/.config/sway/config ]; then
-    mkdir -p $HOME/.config/sway
-    ln -s $HOME/dotfiles/sway.config $HOME/.config/sway/config
-  fi
+  # LINUX SPECIFIC
 
-  # i3 until sway is ready
-  if [ ! -L $HOME/.i3/config ]; then
-    mkdir -p $HOME/.i3
-    ln -s $HOME/dotfiles/i3.config $HOME/.i3/config
-  fi
-  if [ ! -L $HOME/.xinitrc ]; then
-    ln -s $HOME/dotfiles/xinitrc $HOME/.xinitrc
-  fi
-
-  # alacritty
-  if [ ! -L $HOME/.config/alacritty/alacritty.yml ]; then
-    mkdir -p $HOME/.config/alacritty
-    ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+  if [ ! -L $HOME/.config/sway ]; then
+    ln -s $HOME/dotfiles/sway $HOME/.config/sway
   fi
 
 elif [ $platform == 'osx' ]; then

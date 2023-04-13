@@ -101,19 +101,15 @@ alias kgc='kubectl config get-contexts'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
 
-# OC
-if type "$oc" > /dev/null; then
-  source <(oc completion zsh)
-fi
-
 # Git
 
 function gtg() {
   git tag --sort=v:refname | grep "^$1"
 }
 
-# AG and FZF
+# RG and FZF
 
+export RIPGREP_CONFIG_PATH=${HOME}/.ripgreprc
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -125,11 +121,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # JENV
 
-eval "$(jenv init -)"
-
-# RG
-
-export RIPGREP_CONFIG_PATH=${HOME}/.ripgreprc
+if [[ $platform == 'osx' ]]; then
+  eval "$(jenv init -)"
+fi
 
 # Hide zsh prompt
 prompt_context(){}
