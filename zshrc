@@ -100,6 +100,7 @@ alias kuc='kubectl config use-context'
 alias kgc='kubectl config get-contexts'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Git
 
