@@ -22,6 +22,12 @@ fi
 if [ ! -L $HOME/.git_template ]; then
   ln -s $HOME/dotfiles/git_template $HOME/.git_template
 fi
+if [ ! -d $HOME/.config/git ]; then
+  mkdir -p $HOME/.config/git
+fi
+if [ ! -L $HOME/.config/git/allowed_signers ]; then
+  ln -s $HOME/dotfiles/git_allowed_signers $HOME/.config/git/allowed_signers
+fi
 
 # rg
 if [ ! -L $HOME/.ripgreprc ]; then
