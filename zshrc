@@ -69,6 +69,7 @@ elif [[ $platform == 'osx' ]]; then
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export NODE_PATH="/usr/local/lib/node_modules"
   export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS:./node_modules/bin
+  export CLOUDSDK_PYTHON=$(which python3)
 fi
 
 export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/21.4.7075529"
