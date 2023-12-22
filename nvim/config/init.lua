@@ -106,6 +106,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- Diagnostic keymaps
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
 -- LSP settings
 
 -- Use an on_attach function to only map the following keys
@@ -131,9 +135,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function()
-    vim.lsp.buf.format { async = true }
-  end, opts)
 end
 
 require('rust-tools').setup({
@@ -141,13 +142,13 @@ require('rust-tools').setup({
         standalone = false,
         on_attach = on_attach,
         settings = {
-			["rust-analyzer"] = {
-				check = {
-					command = "clippy",
-					extraArgs = { "--all", "--", "-W", "clippy::all" },
-				},
-			},
-		},
+            ["rust-analyzer"] = {
+                check = {
+                    command = "clippy",
+                    extraArgs = { "--all", "--", "-W", "clippy::all" },
+                },
+            },
+        },
     },
 })
 require'lspconfig'.tsserver.setup{
@@ -162,12 +163,116 @@ require'lspconfig'.svelte.setup{
 --     root_dir = { 'build.gradle' }
 -- }
 
--- Setup auto-format on save
-vim.cmd [[
-    augroup Format
-      autocmd!
-        autocmd BufWritePre *.rs lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
-        autocmd BufWritePre *.ts lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
-        autocmd BufWritePre *.tsx lua vim.lsp.buf.format { async = false, timeout_ms = 1000 }
-      augroup END
-    ]]
+-- formatter.nvim
+
+-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+require("formatter").setup({
+    -- Enable or disable logging
+    logging = true,
+    -- Set the log level
+    log_level = vim.log.levels.DEBUG,
+    -- All formatter configurations are opt-in
+    filetype = {
+        rust = {
+            function()
+                return {
+                    exe = "rustfmt",
+                    stdin = true,
+                }
+            end,
+        },
+        javascript = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        ['javascript.tsx'] = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        typescript = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        ['typescript.tsx'] = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        html = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        svelte = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettierd",
+                    args = {
+                        vim.fn.shellescape(vim.api.nvim_buf_get_name(0)),
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+        python = {
+            -- Configuration for psf/black
+            function()
+                return {
+                    exe = "black", -- this should be available on your $PATH
+                    args = { "-" },
+                    stdin = true,
+                }
+            end,
+        },
+    },
+    ["*"] = {
+        require("formatter.filetypes.any").remove_trailing_whitespace,
+    },
+})
+
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+	group = "__formatter__",
+	command = ":FormatWrite",
+})

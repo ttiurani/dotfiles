@@ -101,3 +101,7 @@ nnoremap <expr> <BS> v:hlsearch?':noh<cr>':'<BS>'
 " Spelling toggle to leader 9
 nnoremap <silent> <Leader>9 :set spell!<cr>
 inoremap <silent> <Leader>9 <C-O>:set spell!<cr>
+
+" Formatting
+nnoremap <silent> <Leader>f :Format<CR>
+nnoremap <silent> <Leader>F :FormatWrite<CR>

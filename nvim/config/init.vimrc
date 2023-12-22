@@ -34,6 +34,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'google/vim-maktaba'
 Plug 'alvan/vim-closetag'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'mhartington/formatter.nvim'
 
 " html/css/templating
 Plug 'Glench/Vim-Jinja2-Syntax'
